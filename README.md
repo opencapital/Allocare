@@ -1,4 +1,5 @@
 Allocare
 ========
 
-Software allocare
+Questo repository contiene tutto ciò che riguarda
+il software Allocare
