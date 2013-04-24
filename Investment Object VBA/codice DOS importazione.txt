@@ -1,0 +1,30 @@
+Foglio Bond:
+
+Z:\AMS\AlcInt.exe -run -logon -U DataLoadOc -P "" -L \\Aliante-srv02\allocaredata\logImportTest.txt -S Allocare -loadfile \\Aliante-srv02\allocaredata\Import\LegalEntity.P15
+Z:\AMS\AlcInt.exe -run -logon -U DataLoadOc -P "" -L \\Aliante-srv02\allocaredata\logImportTest.txt -S Allocare -loadfile \\Aliante-srv02\allocaredata\Import\LegalEntity.P50
+Z:\AMS\AlcInt.exe -run -logon -U DataLoadOc -P "" -L \\Aliante-srv02\allocaredata\logImportTest.txt -S Allocare -loadfile \\Aliante-srv02\allocaredata\Import\LegalEntityClassifiers.P42
+Z:\AMS\AlcInt.exe -run -logon -U DataLoadOc -P "" -L \\Aliante-srv02\allocaredata\logImportTest.txt -S Allocare -loadfile \\Aliante-srv02\allocaredata\Import\Bonds.P01
+Z:\AMS\AlcInt.exe -run -logon -U DataLoadOc -P "" -L \\Aliante-srv02\allocaredata\logImportTest.txt -S Allocare -loadfile \\Aliante-srv02\allocaredata\Import\Bond.P41
+Z:\AMS\AlcInt.exe -run -logon -U DataLoadOc -P "" -L \\Aliante-srv02\allocaredata\logImportTest.txt -S Allocare -loadfile \\Aliante-srv02\allocaredata\Import\Bonds.P52
+Z:\AMS\AlcInt.exe -run -logon -U DataLoadOc -P "" -L \\Aliante-srv02\allocaredata\logImportTest.txt -S Allocare -loadfile \\Aliante-srv02\allocaredata\Import\Bond.P03
+Z:\AMS\AlcInt.exe -run -logon -U DataLoadOc -P "" -L \\Aliante-srv02\allocaredata\logImportTest.txt -S Allocare -loadfile \\Aliante-srv02\allocaredata\Import\LegalEntityHolding.P50
+
+
+
+
+
+foglio Equity:
+Z:\AMS\AlcInt.exe -run -logon -U DataLoadOc -P "" -L \\Aliante-srv02\allocaredata\logImportTest.txt -S Allocare -loadfile \\Aliante-srv02\allocaredata\Import\LE.P15
+
+Z:\AMS\AlcInt.exe -run -logon -U DataLoadOc -P "" -L \\Aliante-srv02\allocaredata\logImportTest.txt -S Allocare -C \\Aliante-srv02\allocaredata\Integration\Integration.ini  -loadfile \\Aliante-srv02\allocaredata\Import\Equity.P01
+
+
+
+
+
+Z:\AMS\AlcInt.exe -run -logon -U DataLoadOc -P "" -L \\Aliante-srv02\allocaredata\logImportTest.txt -S Allocare -loadfile \\Aliante-srv02\allocaredata\Import\Equity.P52
+
+
+
+Z:\AMS\AlcInt.exe -S Allocare -C Y:\AllocareData\Integration\Integration.ini -load y:\AllocareData\Import\Equity.P52
+Z:\AMS\AlcInt.exe -S Allocare -C Y:\AllocareData\Integration\Integration.ini -load y:\AllocareData\Import\LE.P15
