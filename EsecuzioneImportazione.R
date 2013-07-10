@@ -140,3 +140,52 @@ if (nbFiles>0) {
 		file.remove(fileNames)
 	}
 }	
+
+# Process the funds folder
+directory <- "funds"
+setwd(file.path(home,directory))
+fileNames <- getFileNames()
+nbFiles <- length(fileNames)
+
+if (nbFiles>0) {
+	copyFileNames(fileNames)
+	
+	# start to execute the files according to the correct order
+	for (file in fileNames) {
+		command <- 'Z:\\AlcInt.exe -run -logon -U DataLoadOc -P \"\" -L W:\\Funds\\logImportTest.txt -S Allocare_Prod -loadfile W:\\Funds\\LE.P15'
+		if (grepl("LE.P15",file)) shell(command,wait=TRUE,mustWork=TRUE)
+	}
+	
+	for (file in fileNames) {
+		command <- 'Z:\\AlcInt.exe -run -logon -U DataLoadOc -P \"\" -L W:\\Funds\\logImportTest.txt -S Allocare_Prod  -loadfile W:\\Funds\\Equity.P01'
+		if (grepl("Equity.P01",file)) shell(command,wait=TRUE,mustWork=TRUE)
+	}
+	
+	for (file in fileNames) {
+		command <- 'Z:\\AlcInt.exe -run -logon -U DataLoadOc -P \"\" -L W:\\Funds\\logImportTest.txt -S Allocare_Prod -loadfile W:\\Funds\\Equity.P52'
+		if (grepl("Equity.P52",file)) shell(command,wait=TRUE,mustWork=TRUE)
+	}
+
+	for (file in fileNames) {
+		command <- 'Z:\\AlcInt.exe -run -logon -U DataLoadOc -P \"\" -L W:\\Funds\\logImportTest.txt -S Allocare_Prod -loadfile W:\\Funds\\LegalEntityHolding.P50'
+		if (grepl("LegalEntityHolding.P50",file)) shell(command,wait=TRUE,mustWork=TRUE)
+	}
+	
+	for (file in fileNames) {
+		command <- 'Z:\\AlcInt.exe -run -logon -U DataLoadOc -P \"\" -L W:\\Funds\\logImportTest.txt -S Allocare_Prod -loadfile W:\\Funds\\Timeseries_data.P06'
+		if (grepl("Timeseries_data.P06",file)) shell(command,wait=TRUE,mustWork=TRUE)
+	}
+
+	for (file in fileNames) {
+		command <- 'Z:\\AlcInt.exe -run -logon -U DataLoadOc -P \"\" -L W:\\Funds\\logImportTest.txt -S Allocare_Prod -loadfile W:\\Funds\\LEInd.P42'
+		if (grepl("LEInd.P42",file)) shell(command,wait=TRUE,mustWork=TRUE)
+	}
+
+	fileNames <- getFileNames()
+
+	nbFiles <- length(fileNames)
+	if (nbFiles>0) {
+		copyFileNames(fileNames)
+		file.remove(fileNames)
+	}
+}	
